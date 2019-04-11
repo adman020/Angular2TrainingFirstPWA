@@ -1,2 +1,14 @@
-# Angular2TrainingFirstPWA
-Tutorial from Build your first PWA with Angular Jan 30 2019
+
+
+
+https://developer.okta.com/blog/2019/01/30/first-angular-pwa
+
+to start 
+
+don't use ng serve
+
+
+use 
+
+ng build --prod --source-map   // builds the app
+http-server-spa dist/AngularBooksPWA/ index.html 8080  // starts the http server
