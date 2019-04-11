@@ -17,14 +17,28 @@ export class AppComponent {
               private router: Router) {
   }
 
+  offline: boolean;
+
+  onNetworkStatusChange() {
+    this.offline = !navigator.onLine;
+    console.log('offline ' + this.offline);
+  }
+
   ngOnInit() {
     this.searchForm = this.formBuilder.group({
       search: ['', Validators.required],
     });
+
+    window.addEventListener('online',  this.onNetworkStatusChange.bind(this));
+    window.addEventListener('offline', this.onNetworkStatusChange.bind(this));
   }
 
   onSearch() {
     if (!this.searchForm.valid) return;
     this.router.navigate(['search'], { queryParams: {query: this.searchForm.get('search').value}});
   }
+
+ 
+
+
 }

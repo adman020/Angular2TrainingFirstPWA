@@ -18,6 +18,8 @@
 <mat-menu x-position="before" #menu="matMenu">
   <button mat-menu-item routerLink="/"><mat-icon>home</mat-icon> Home</button>
 
+  <div *ngIf="offline">offline</div>
+  
   <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
     <div class="input-group">
       <input class="input-group-field" type="search" value="" placeholder="Search" formControlName="search">
