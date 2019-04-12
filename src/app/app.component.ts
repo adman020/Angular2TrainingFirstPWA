@@ -28,17 +28,10 @@ export class AppComponent {
     this.searchForm = this.formBuilder.group({
       search: ['', Validators.required],
     });
-
-    window.addEventListener('online',  this.onNetworkStatusChange.bind(this));
-    window.addEventListener('offline', this.onNetworkStatusChange.bind(this));
   }
 
   onSearch() {
     if (!this.searchForm.valid) return;
     this.router.navigate(['search'], { queryParams: {query: this.searchForm.get('search').value}});
   }
-
- 
-
-
 }

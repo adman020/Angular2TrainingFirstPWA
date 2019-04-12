@@ -3,7 +3,7 @@
 
 https://developer.okta.com/blog/2019/01/30/first-angular-pwa
 
-to start 
+to start
 
 don't use ng serve
 
